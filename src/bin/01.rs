@@ -17,7 +17,7 @@ pub fn part_two(input: &str) -> Option<u32> {
     sorted_calories.sort_by(|a, b| b.cmp(a));
     let sum_of_calories = sorted_calories[0..3].iter().sum::<u32>();
 
-    return Some(sum_of_calories);
+    Some(sum_of_calories)
 }
 
 fn main() {
