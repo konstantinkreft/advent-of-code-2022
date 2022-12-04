@@ -12,11 +12,11 @@ jobs:
         steps:
             - name: Test
               env:
-                  TEST_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  TEST_SECRET: ${{ secrets.TEST_SECRET }}
+                  AOC_ENABLED: ${{ secrets.AOC_ENABLED }}
+                  AOC_USER_ID: ${{ secrets.AOC_USER_ID }}
               run: |
-                  echo ${#TEST_GITHUB_TOKEN}
-                  echo ${#TEST_SECRET}
+                  echo ${#AOC_ENABLED}
+                  echo ${#AOC_USER_ID}
             - uses: actions/checkout@v2
               if: ${{ env.AOC_ENABLED }}
               env:
