@@ -10,13 +10,6 @@ jobs:
     update-readme:
         runs-on: ubuntu-latest
         steps:
-            - name: Test
-              env:
-                  AOC_ENABLED: ${{ secrets.AOC_ENABLED }}
-                  AOC_USER_ID: ${{ secrets.AOC_USER_ID }}
-              run: |
-                  echo ${#AOC_ENABLED}
-                  echo ${#AOC_USER_ID}
             - uses: actions/checkout@v2
               if: ${{ env.AOC_ENABLED }}
               env:
