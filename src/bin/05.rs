@@ -47,7 +47,7 @@ fn get_result(stacks: &Stack) -> String {
         .collect()
 }
 
-fn move_crates(stacks: &mut Stack, moves: &Vec<Move>, move_in_packs: bool) -> Stack {
+fn move_crates(stacks: &mut Stack, moves: &[Move], move_in_packs: bool) -> Stack {
     moves.iter().for_each(|(amount, from, to)| {
         if move_in_packs {
             let from_stack = &mut stacks[*from - 1];
@@ -66,13 +66,13 @@ fn move_crates(stacks: &mut Stack, moves: &Vec<Move>, move_in_packs: bool) -> St
 }
 
 pub fn part_one(input: &str) -> Option<String> {
-    let (mut stacks, moves) = parse(&input);
+    let (mut stacks, moves) = parse(input);
 
     Some(get_result(&move_crates(&mut stacks, &moves, false)))
 }
 
 pub fn part_two(input: &str) -> Option<String> {
-    let (mut stacks, moves) = parse(&input);
+    let (mut stacks, moves) = parse(input);
 
     Some(get_result(&move_crates(&mut stacks, &moves, true)))
 }
